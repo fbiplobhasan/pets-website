@@ -1,3 +1,9 @@
+// 1. fetch button category
+// 2. fetch all card
+// 3. fetch by category with category buttons
+// 4. fetch sorted data
+
+
 let storedPetsData = [];
 
 const loadingSpinner = (show) => {
