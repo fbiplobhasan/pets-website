@@ -32,6 +32,36 @@ const loadAllPets = async () => {
     }, 200)
 }
 
+const loadPetDetails = async (id) => {
+    const res = await fetch(`https://openapi.programming-hero.com/api/peddy/pet/${id}`)
+    const data = await res.json()
+    displayDetails(data.petData);
+}
+
+const displayDetails = (data) => {
+    const detailsContainer = document.getElementById('details-container')
+    detailsContainer.innerHTML = `
+    
+    <div class="flex">
+        <div>
+        <img src=${data.image} />
+        <h1>${data.breed}</h1>
+        <h1>${data.category}</h1>
+        </div>
+        <div>
+        <h1>${data.price}</h1>
+        <h1>${data.date_of_birth}</h1>
+        <h1>${data.gender}</h1>
+        <h1>${data.gender}</h1>
+    </div>
+    </div>
+    <p>${data.pet_details}</p>
+    
+    `
+
+    my_modal_4.showModal()
+}
+
 
 const displayAllPets = (data) => {
 
@@ -64,7 +94,7 @@ const displayAllPets = (data) => {
            <div class="flex justify-between overflow-hidden mt-5">
            <button onclick="adoptModal(this)" class="border">Adopt</button>
            <button onclick="like('${card.image}')" class="border h-fit">Like</button>
-           <button class="border">Details</button>
+           <button onclick="loadPetDetails('${card.petId}')" class="border">Details</button>
             </div>
         `
         cardContainer.appendChild(div)
@@ -97,6 +127,8 @@ const adoptModal = (event) => {
         if (count < 1) {
             clearInterval(interval)
             my_modal_1.close()
+            event.textContent = 'Adopted'
+            event.disabled = true
         }
     }, 1000)
 

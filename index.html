@@ -52,9 +52,10 @@
             It is a long established fact that a reader will be distracted by the readable content of a page when
             looking at its layout. The point of using Lorem Ipsum is that it has a.
         </p>
-        <button class="bg-teal-600 hover:bg-teal-700 text-white px-6 py-2 rounded font-medium">
-            View More
-        </button>
+        <a href="#card-container"><button
+                class="bg-teal-600 hover:bg-teal-700 text-white px-6 py-2 rounded font-medium">
+                View More
+            </button></a>
 
         <div class="mt-12">
             <img src="./images/pet.webp" alt="Dog and Cat" class="mx-auto w-full max-w-sm md:max-w-lg" />
@@ -92,7 +93,7 @@
             </div>
             <!-- img section -->
             <div id="liked-container" class="rounded-xl border grid grid-cols-2 gap-2 p-2 h-fit">
-                
+
             </div>
         </div>
 
@@ -454,21 +455,35 @@
     </footer>
 
     <!-- Open the modal using ID.showModal() method -->
-<button class="btn" onclick="my_modal_1.showModal()">open modal</button>
-<dialog id="my_modal_1" class="modal">
-  <div class="modal-box flex flex-col justify-center items-center">
-    <h3 class="font-bold text-lg"><img src="./images/logo.webp" alt=""></h3>
-    <p class="">Press ESC key or click the button below to close</p>
-    <p class="">Press ESC key or click the button below to close</p>
-    <p><span id="countdown-container">3</span></p>
-    <div class="modal-action">
-      <form method="dialog">
-        <!-- if there is a button in form, it will close the modal -->
-        <button class="btn">Close</button>
-      </form>
-    </div>
-  </div>
-</dialog>
+    <button class="btn" onclick="my_modal_4.showModal()">open modal</button>
+    <dialog id="my_modal_4" class="modal">
+        <div id="details-container" class="modal-box">
+
+            <div class="modal-action">
+                <form method="dialog">
+                    <!-- if there is a button in form, it will close the modal -->
+                    <button class="btn">Close</button>
+                </form>
+            </div>
+        </div>
+    </dialog>
+
+        <!-- Open the modal using ID.showModal() method -->
+    <button class="btn" onclick="my_modal_1.showModal()">open modal</button>
+    <dialog id="my_modal_1" class="modal">
+        <div class="modal-box flex flex-col justify-center items-center">
+            <h3 class="font-bold text-lg"><img src="./images/logo.webp" alt=""></h3>
+            <p class="">Congratutions</p>
+            <p class="">You Adopted This animal.</p>
+            <p><span id="countdown-container">3</span></p>
+            <div class="modal-action">
+                <form method="dialog">
+                    <!-- if there is a button in form, it will close the modal -->
+                    <button class="btn">Close</button>
+                </form>
+            </div>
+        </div>
+    </dialog>
     <script src="utilities.js"></script>
     <script src="script.js"></script>
 </body>
