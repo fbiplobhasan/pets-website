@@ -1,3 +1,4 @@
+
 const loadAllCategoryBtn = async () => {
     const res = await fetch('https://openapi.programming-hero.com/api/peddy/categories')
     const data = await res.json()
@@ -19,7 +20,7 @@ const loadPetsByCategory = async (category) => {
 
 const loadAllPets = async () => {
 
-    
+
 
     loadingSpinner(true)
     const res = await fetch('https://openapi.programming-hero.com/api/peddy/pets')
@@ -61,8 +62,8 @@ const displayAllPets = (data) => {
            <p class="font-bold">Date of birth:${card.date_of_birth ? card.date_of_birth : 'Not Available'}</p>
            <p class="font-bold">Category:${card.category}</p>
            <div class="flex justify-between overflow-hidden mt-5">
-           <button class="border">Adopt</button>
-           <button class="border">Like</button>
+           <button onclick="adoptModal(this)" class="border">Adopt</button>
+           <button onclick="like('${card.image}')" class="border h-fit">Like</button>
            <button class="border">Details</button>
             </div>
         `
@@ -83,6 +84,22 @@ const displayCategoryBtn = (data) => {
         `
         btnContainer.appendChild(div)
     });
+}
+
+const adoptModal = (event) => {
+    let count = 3;
+    const countContainer = document.getElementById('countdown-container')
+    countContainer.innerText = count;
+    const interval = setInterval(() => {
+        count--
+        if (count !== 0) countContainer.innerHTML = count
+        my_modal_1.showModal()
+        if (count < 1) {
+            clearInterval(interval)
+            my_modal_1.close()
+        }
+    }, 1000)
+
 }
 
 loadAllCategoryBtn()

@@ -91,7 +91,9 @@
 
             </div>
             <!-- img section -->
-            <div class=""></div>
+            <div id="liked-container" class="rounded-xl border grid grid-cols-2 gap-2 p-2 h-fit">
+                
+            </div>
         </div>
 
     </div>
@@ -450,6 +452,23 @@
             </div>
         </div>
     </footer>
+
+    <!-- Open the modal using ID.showModal() method -->
+<button class="btn" onclick="my_modal_1.showModal()">open modal</button>
+<dialog id="my_modal_1" class="modal">
+  <div class="modal-box flex flex-col justify-center items-center">
+    <h3 class="font-bold text-lg"><img src="./images/logo.webp" alt=""></h3>
+    <p class="">Press ESC key or click the button below to close</p>
+    <p class="">Press ESC key or click the button below to close</p>
+    <p><span id="countdown-container">3</span></p>
+    <div class="modal-action">
+      <form method="dialog">
+        <!-- if there is a button in form, it will close the modal -->
+        <button class="btn">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
     <script src="utilities.js"></script>
     <script src="script.js"></script>
 </body>

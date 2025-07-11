@@ -10,7 +10,7 @@ const loadingSpinner = (show) => {
     const spinner = document.getElementById('loader')
     if (show) {
         spinner.classList.remove('hidden')
-        const cardContainer = document.getElementById('card-container').innerHTML = '';
+        document.getElementById('card-container').innerHTML = '';
     } else {
         spinner.classList.add('hidden')
     }
@@ -46,4 +46,12 @@ const sort = () => {
         displayAllPets(sortedData);
         loadingSpinner(false)
     }, 200)
+}
+
+const like = (imgUrl) => {
+    console.log(imgUrl);
+    const imgContainer = document.getElementById('liked-container')
+    const div = document.createElement('div')
+    div.innerHTML = `<img class="border rounded-xl p-2" src=${imgUrl} alt="">`
+    imgContainer.appendChild(div)
 }
